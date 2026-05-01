@@ -2,10 +2,15 @@ Flash sale app
 
 ## Project setup
 
-First, run the development server:
+First, install project dependencies:
 
 ```bash
 npm install
+```
+
+Then, run the project:
+
+```bash
 npm run dev
 ```
 
