@@ -1,4 +1,4 @@
-Flash sale app
+#Flash sale app
 
 ## Project setup
 
