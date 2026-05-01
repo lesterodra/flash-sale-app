@@ -47,7 +47,7 @@ export default function AvailableProducts(props: { flashSales: FlashSale[] }) {
     }
   }, [isError]);
 
-  const handleBuyNow = async () => {
+  const handleBuyNow = async (productId: number, flashSaleId: number) => {
     if (!email) {
       setErrorMessage("Email / Username is required!");
 
@@ -56,8 +56,8 @@ export default function AvailableProducts(props: { flashSales: FlashSale[] }) {
     try {
       await mutate({
         email,
-        product_id: 1,
-        flash_sale_id: 1,
+        product_id: productId,
+        flash_sale_id: flashSaleId,
       });
 
       // Add some delay in refetching
@@ -104,7 +104,7 @@ export default function AvailableProducts(props: { flashSales: FlashSale[] }) {
 
           <div className="mt-4">
             <button
-              onClick={() => handleBuyNow()}
+              onClick={() => handleBuyNow(flashSale.product_id, flashSale.id)}
               disabled={
                 isPending ||
                 flashSale.sale_quantity === 0 ||
